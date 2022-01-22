@@ -2,10 +2,10 @@
 
 __author__ = "730243735"
 
-WORD1: str = str("hello")
-WORD2: str = str("heels")
-LETTER1: str = str("e")
-LETTER2: str = str("h")
+HELLO: str = str("hello")
+HEELS: str = str("heels")
+LETTER_E: str = str("e")
+LETTER_H: str = str("h")
 
 chosen_word: str = input("Enter a 5-character word:")
 if len(chosen_word) != 5:
@@ -18,16 +18,16 @@ else:
     else:
         print("Searching for " + chosen_letter + " in " + chosen_word + "")
         if chosen_letter != str("h") or str("e") or str("l") or str("o") or str("s"):
-            if chosen_word == WORD1:
-                if chosen_letter == LETTER1:
+            if chosen_word == HELLO:
+                if chosen_letter == LETTER_E:
                     print("e found at index 1")
                     print("1 instance of e found in hello")
-            if chosen_word == WORD2:
-                if chosen_letter == LETTER1:
+            if chosen_word == HEELS:
+                if chosen_letter == LETTER_E:
                     print("e found at index 1")
                     print("e found at index 2")
                     print("2 instances found in heels")
-                if chosen_letter == LETTER2:
+                if chosen_letter == LETTER_H:
                     print("h found at index 0")
                     print("1 instance of h found in heels")
         else:
