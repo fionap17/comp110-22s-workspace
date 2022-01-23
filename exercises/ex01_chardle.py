@@ -15,6 +15,7 @@ else:
     chosen_letter: str = input("Enter a single character:")
     if len(chosen_letter) != 1:
         print("Error: Character must be a single character.")
+        exit()
     else:
         print("Searching for " + chosen_letter + " in " + chosen_word + "")
         if chosen_letter != str("h") or str("e") or str("l") or str("o") or str("s"):
