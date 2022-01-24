@@ -2,13 +2,9 @@
 
 __author__ = "730243735"
 
-
 chosen_word: str = input("Enter a 5-character word:")
 if len(chosen_word) != 5:
     print("Error: word must contain 5 characters")
-    exit()
-if chosen_word.isalpha() != "hello".isalpha():
-    print("Error word must contain only characters of the alphabet")
     exit()
 else:
     chosen_letter: str = input("Enter a single character:")
@@ -45,3 +41,4 @@ else:
         else:
             print("No instances of " + chosen_letter + " found in " + chosen_word)
             exit()
+exit()
