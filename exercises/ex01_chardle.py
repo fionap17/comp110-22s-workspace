@@ -21,22 +21,22 @@ else:
         count: int = 0
         if char1 == chosen_letter:
             print(chosen_letter + " found at index 0")
-            count = count + int(1)
+            count = count + 1
         if char2 == chosen_letter:
             print(chosen_letter + " found at index 1")
-            count = count + int(1)
+            count = count + 1
         if char3 == chosen_letter:
             print(chosen_letter + " found at index 2")
-            count = count + int(1)
+            count = count + 1
         if char4 == chosen_letter:
             print(chosen_letter + " found at index 3")
-            count = count + int(1)
+            count = count + 1
         if char5 == chosen_letter:
             print(chosen_letter + " found at index 4")
-            count = count + int(1)
-        if count == int(1): 
+            count = count + 1
+        if count == 1: 
             print("1 instance of " + chosen_letter + " found in " + chosen_word)
-        if count >= int(2):
+        if count >= 2:
             print(str(count) + " instances of " + chosen_letter + " found in " + chosen_word)
-        else:
+        if count == 0:
             print("No instances of " + chosen_letter + " found in " + chosen_word)
