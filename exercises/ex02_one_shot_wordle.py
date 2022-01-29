@@ -3,7 +3,8 @@
 __author__ = "730243735"
 
 SECRET_WORD = str("python")
-guess: str = str(input("what is your 6-letter guess?"))
+word_length: str = str(len(SECRET_WORD))
+guess: str = str(input(f"what is your { word_length }-letter guess?"))
 WHITE_BOX: str = "\U00002B1C"
 GREEN_BOX: str = "\U0001F7E9"
 YELLOW_BOX: str = "\U0001F7E8"
