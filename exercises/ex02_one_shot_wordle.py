@@ -12,7 +12,7 @@ idx: int = 0
 s: str = str("")
 
 while len(guess) < len(SECRET_WORD) or len(guess) > len(SECRET_WORD):
-    guess: str = str(input("That was not 6 letters. try again:"))
+    guess = str(input(f"That was not { word_length } letters. try again:"))
 else:
     while idx < len(SECRET_WORD):
         if guess[idx] == SECRET_WORD[idx]:
@@ -22,7 +22,7 @@ else:
             alt_idx: int = 0
             while not var and alt_idx < len(SECRET_WORD):
                 if guess[idx] == SECRET_WORD[alt_idx]:
-                    var: bool = True
+                    var = True
                 alt_idx = alt_idx + 1
             if var:
                 s = s + YELLOW_BOX
