@@ -8,8 +8,8 @@ YELLOW_BOX: str = "\U0001F7E8"
 
 
 def contains_char(word: str, letter: str) -> bool:
-    assert len(letter) == 1
     """Search for letter in word."""
+    assert len(letter) == 1
     idx: int = 0
     while idx < len(word):
         if letter == word[idx]:
@@ -37,27 +37,26 @@ def emojified(guess: str, SECRET: str) -> str:
 
 def input_guess(word_length: int) -> str:
     """Checks word length until it matches expected."""
-    guess: str = input(f"Enter a {word_length} character word:")
+    guess: str = input(f"Enter a {word_length} character word: ")
     while len(guess) < word_length or len(guess) > word_length:
-        guess: str = input(f"That wasn't {word_length} chars! Try again:")
+        guess = input(f"That wasn't {word_length} chars! Try again: ")
     else:
         return guess
 
 
 def main() -> None:
     """The entrypoint of the program and main game loop."""
-    SECRET: str = str("codes")
-    guess: str = input(f"Enter a {len(SECRET)} character word:")
-    n: int = 0
-    while guess is not SECRET and n < 7:
+    SECRET: str = "codes"
+    guess: str = ""
+    n: int = 1
+    while guess != SECRET and n < 7:
         print(f"=== Turn {n}/6 ==")
-        input_guess(len(SECRET))
-        emojified(guess, SECRET)
+        guess = input_guess(len(SECRET))
+        print(emojified(guess, SECRET))
         if guess == SECRET:
             print(f"You won in {n}/6 turns!")
-            print(emojified(guess, SECRET))
         n = n + 1
-    else:
+    if n == 7:
         print("X/6- Sorry, try again tomorrow!")
 
 
