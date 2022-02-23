@@ -9,6 +9,13 @@ from random import randint
 from turtle import Turtle, colormode, done
 colormode(255)
 
+"""Criteria to call for the same function twice fulfilled: fn 34-35."""
+"""Criteria to fill color fulfilled: fn 69-76."""
+"""Criteria to use loop fulfilled: fn 41-47."""
+"""Criteria to change marker color fulfilled: fn 106."""
+
+"""Criteria to try something fun fulfilled: fn 53-58."""
+
 
 def main() -> None:
     """The entrypoint of my scene."""
@@ -31,12 +38,24 @@ def main() -> None:
     draw_cap(paint, -250, 175, 150)
     draw_cap(paint, 100, 175, 150)
 
-    draw_snow(paint, -200, 175, 50)
-    draw_snow(paint, -250, 175, 50)
-    draw_snow(paint, -150, 175, 50)
-    draw_snow(paint, 200, 175, 50)
-    draw_snow(paint, 100, 175, 50)
-    draw_snow(paint, 150, 175, 50)
+    i: int = 0
+    s: int = 0
+    while i < 3:
+        draw_snow(paint, -250 + s, 175, 50)
+        draw_snow(paint, 100 + s, 175, 50)
+        i += 1
+        s += 50
+
+    """Lake in foreground."""
+    draw_lake(paint, 750, -850, 750, 180)
+
+    """Drawing a random number of trees"""
+    idx: int = 0
+    sx: int = 0
+    while idx < randint(10, 40):
+        draw_forest(paint, -400 + sx, 0, 100)
+        sx += 50
+        idx += 1
 
 
 def draw_triangle(mountain: Turtle, x: float, y: float, width: float) -> None:
@@ -121,7 +140,7 @@ def background_meadow(field: Turtle, x: float, y: float, width: float) -> None:
     field.goto(x, y)
     field.setheading(0.0)
     field.pendown()
-    field.color("green")
+    field.color(60, 80, 20)
     field.begin_fill()
     i: int = 0
     while i < 4:
@@ -131,7 +150,37 @@ def background_meadow(field: Turtle, x: float, y: float, width: float) -> None:
     field.end_fill()
 
 
-def
+def draw_lake(radius: Turtle, x: float, y: float, rad1: float, rad2: float) -> None:
+    """Draws a lake in the foreground of scene."""
+    radius.hideturtle()
+    radius.speed(100)
+    radius.penup()
+    radius.goto(x, y)
+    radius.setheading(90.0)
+    radius.pendown()
+    radius.color("dark blue")
+    radius.begin_fill()
+    radius.circle(rad1, rad2)
+    radius.end_fill()
+
+
+def draw_forest(tree: Turtle, x: float, y: float, height: float) -> None:
+    """Draws trees into the meadow."""
+    tree.hideturtle()
+    tree.speed(100)
+    tree.penup()
+    tree.goto(x, y)
+    tree.setheading(0.0)
+    tree.pendown()
+    tree.pencolor("green")
+    tree.fillcolor("dark green")
+    tree.begin_fill()
+    i: int = 0
+    while i < 3:
+        tree.forward(height)
+        tree.left(120)
+        i += 1
+    tree.end_fill()
 
 
 if __name__ == "__main__":
