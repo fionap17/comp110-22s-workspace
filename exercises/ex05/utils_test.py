@@ -34,9 +34,33 @@ def test_sub_empty() -> None:
 def test_sub_single_item() -> None:
     """Tests edge case of a list with only one item."""
     items: list[int] = [3]
-    start: int = 1
-    end: int = 2
+    start: int = 0
+    end: int = 1
     assert sub(items, start, end) == [3]
+
+
+def test_sub_single_range() -> None:
+    """Tests edge case of a list with only one item and start and end index are the same."""
+    items: list[int] = [3]
+    start: int = 0
+    end: int = 3
+    assert sub(items, start, end) == []
+
+
+def test_sub_range() -> None:
+    """Tests use case when end index is greater than length of list."""
+    items: list[int] = [1, 2, 3, 4, 5, 6, 7, 8]
+    start: int = 3
+    end: int = 12
+    assert sub(items, start, end) == [4, 5, 6, 7]
+
+
+def test_sub_start_range() -> None:
+    """Tests sub when start index is the length of the list."""
+    items: list[int] = [3]
+    start: int = 1
+    end: int = 3
+    assert sub(items, start, end) == []
 
 
 def test_sub() -> None:

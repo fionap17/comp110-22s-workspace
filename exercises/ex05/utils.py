@@ -19,13 +19,13 @@ def only_evens(items: list[int]) -> list[int]:
 # Parameters: A list and two ints, where the first int serves as a start index and the second int serves as an end index (not inclusive).
 def sub(items: list[int], start: int, end: int) -> list[int]:
     """Returns a subset of integers from a given list. The range is determined by the start and end indexes."""
+    new: list[int] = []
     if start < 0:
         start = 0
     if end > len(items):
         end = len(items) - 1
     if len(items) == 0 or start > len(items) or end <= 0:
-        return items
-    new: list[int] = []
+        return new
     while start < end:
         new.append(items[start])
         start += 1
