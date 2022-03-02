@@ -39,15 +39,15 @@ def test_sub_single_item() -> None:
     assert sub(items, start, end) == [3]
 
 
-def test_sub_single_range() -> None:
-    """Tests edge case of a list with only one item and start and end index are the same."""
+def test_sub_single_item_end() -> None:
+    """Tests edge case of a list with only one item. Start and end index are the same."""
     items: list[int] = [3]
-    start: int = 0
-    end: int = 3
+    start: int = 2
+    end: int = 2
     assert sub(items, start, end) == []
 
 
-def test_sub_range() -> None:
+def test_sub_end_greater_than_length() -> None:
     """Tests use case when end index is greater than length of list."""
     items: list[int] = [1, 2, 3, 4, 5, 6, 7, 8]
     start: int = 3
@@ -55,7 +55,7 @@ def test_sub_range() -> None:
     assert sub(items, start, end) == [4, 5, 6, 7]
 
 
-def test_sub_start_range() -> None:
+def test_sub_start_equal_length() -> None:
     """Tests sub when start index is the length of the list."""
     items: list[int] = [3]
     start: int = 1
@@ -63,7 +63,7 @@ def test_sub_start_range() -> None:
     assert sub(items, start, end) == []
 
 
-def test_sub() -> None:
+def test_sub_in_range() -> None:
     """Tests use case of a list of integers for sub function."""
     items: list[int] = [1, 2, 3, 4, 5, 6]
     start: int = 1
@@ -71,7 +71,7 @@ def test_sub() -> None:
     assert sub(items, start, end) == [2, 3, 4]
 
 
-def test_sub_index_range() -> None:
+def test_sub_index_out_range() -> None:
     """Tests use case of sub when start and end integers are out of range of list length."""
     items: list[int] = [1, 2, 3, 4, 5, 6]
     start: int = -2

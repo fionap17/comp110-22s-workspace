@@ -23,7 +23,7 @@ def sub(items: list[int], start: int, end: int) -> list[int]:
     if start < 0:
         start = 0
     if end > len(items):
-        end = len(items) - 1
+        end = len(items)
     if len(items) == 0 or start > len(items) or end <= 0:
         return new
     while start < end:
