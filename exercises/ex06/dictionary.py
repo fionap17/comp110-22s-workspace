@@ -8,7 +8,10 @@ def invert(inversion: dict[str, str]) -> dict[str, str]:
     """Inverts the keys and values of a given dictionary."""
     inverted_dict: dict[str, str] = dict()
     for key in inversion:
-        inverted_dict[inversion[key]] = key
+        if inversion[key] in inverted_dict:
+            raise KeyError("Duplicated key.")
+        else:
+            inverted_dict[inversion[key]] = key
     return inverted_dict
 
 
