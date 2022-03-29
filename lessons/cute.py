@@ -10,3 +10,4 @@ for hangout in days:
         print("yay!")
     else:
         print("sadge")
+
