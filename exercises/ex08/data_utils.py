@@ -86,3 +86,40 @@ def count(char_to_count: list[str]) -> dict[str, int]:
         else:
             new_dict[character] = 1
     return new_dict
+
+
+def correlate(table: dict[str, list[str]], variable1: str, variable2: str) -> dict[str, int]:
+    """Creates a dictionary that combines two variables and counts the frequency of which both are true for one student."""
+    correlation_dict: dict[str, int] = {}
+    variable1_values: list[str] = table[variable1]
+    variable2_values: list[str] = table[variable2]
+    item: int = 0
+    i: int = 0 
+    correlation_dict["supports idea 1"] = 0
+    correlation_dict["not support idea 1"] = 0
+    while i < len(variable1_values) and len(variable2_values):
+        if variable1_values[item] == "None to less than one month!":
+            if variable2_values[item] == "5":
+                correlation_dict["supports idea 1"] += 1
+            elif variable2_values[item] == "6":
+                correlation_dict["supports idea 1"] += 1
+            elif variable2_values[item] == "7":
+                correlation_dict["supports idea 1"] += 1
+            else:
+                correlation_dict["not support idea 1"] += 1
+        i += 1
+        item += 1
+    return correlation_dict
+
+
+def improved(table: dict[str, int], keys: list[str]) -> dict[str, int]:
+    """Summation of counts of a given list of keys and creates a new dictionary."""
+    new_dict: dict[str, int] = {}
+    new_dict["improve"] = 0
+    new_dict["not improve"] = 0
+    for answer in table:
+        if answer in keys:
+            new_dict["improve"] += table[answer]
+        else:
+            new_dict["not improve"] += table[answer]
+    return new_dict
